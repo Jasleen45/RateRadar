@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RateRadar</title>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="title">RateRadar</div>
+        <div class="review-box">
+
+            <form id="reviewForm" class="review-form" method="POST" action="/submit-review">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+            
+                <!-- Place-specific fields -->
+                <div id="placeFields">
+                    <label for="placeName">Place Name:</label>
+                    <input type="text" id="placeName" name="placeName">
+            
+                    <label for="placeAddress">Place Address:</label>
+                    <input type="text" id="placeAddress" name="placeAddress">
+                </div>
+            
+                <!-- Product-specific fields -->
+                <div id="productFields" style="display: none;">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName">
+            
+                    <label for="productBrand">Product Brand:</label>
+                    <input type="text" id="productBrand" name="productBrand">
+                </div>
+            
+                <label for="review">Your Review:</label>
+                <textarea id="review" name="review" required></textarea>
+            
+                <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
+            
+        </div>
+        <div class="reviews-section" id="reviewDisplay">
+            <h3>User Reviews</h3>
+            <!-- Reviews will appear here -->
+        </div>
+    </div>
+
+   
+    
+</body>
+</html>
