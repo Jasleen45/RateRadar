@@ -4,7 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RateRadar</title>
-    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fefaf0;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #8a7040;
+        }
+        .review-box {
+            width: 90%;
+            max-width: 800px;
+            background: #fef5e7;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .user-info {
+            margin-bottom: 20px;
+            margin-right: 30px;
+        }
+        .user-info input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .review-form {
+            margin-bottom: 20px;
+            margin-right: 30px;
+        }
+        .review-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .review-form input, .review-form textarea, .review-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .review-form textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .submit-btn {
+            width: 100%;
+            background-color: #8a7040;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #6b5533;
+        }
+        .reviews-section {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fef5e7;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        
+    </style>
 </head>
 <body>
     <div class="container">
@@ -49,6 +134,39 @@
             <!-- Reviews will appear here -->
         </div>
     </div>
+
+    
+    <script>
+        document.getElementById("reviewForm").addEventListener("submit", async function (event) {
+            event.preventDefault(); // Prevent the default form submission
+    
+            const formData = new FormData(this);
+            const reviewData = {};
+            formData.forEach((value, key) => {
+                reviewData[key] = value;
+            });
+    
+            try {
+                // Send POST request to submit the review
+                const response = await fetch("/submit-review", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: new URLSearchParams(reviewData).toString(),
+                });
+    
+                if (response.ok) {
+                    // After submitting, refresh the reviews section
+                    fetchReviews();
+                } else {
+                    console.error("Failed to submit the review");
+                }
+            } catch (error) {
+                console.error("Error submitting review:", error);
+            }
+        });
+    </script>
 
    
     
