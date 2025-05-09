@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+.hero {
+   
+    text-align: center;
+    padding: 50px;
+    color: rgb(100, 86, 153);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    color: rgb(100, 86, 153);
+    
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.reviews {
+    max-height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #fafafa;
+}
+
+.review-card {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: rgb(100, 86, 153);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: rgb(184, 167, 246);
+}
+
+
+.add-place {
+    margin: 40px auto;
+    max-width: 400px;
+    text-align: center;
+    color: rgb(100, 86, 153);
+}
+
+.add-place input {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    width: 80%;
+}
+
+.add-place button {
+    padding: 8px 16px;
+}
+
+.add-place-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: center;
+    color: rgb(100, 86, 153);
+    transition: transform 0.3s;
+}
+
+.add-place-card:hover {
+    transform: scale(1.02);
+}
+
+.add-place-card input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.add-place-card button {
+    padding: 10px 20px;
+}

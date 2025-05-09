@@ -1,11 +1,12 @@
 {
-  "name": "rate_radar",
-  "version": "1.0.0",
-  "main": "RateRadar.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.9"
   },
-  "author": "jasleen",
-  "license": "ISC",
-  "description": ""
+  "devDependencies": {
+    "tailwindcss": "^4.0.9"
+  }
 }

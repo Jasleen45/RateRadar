@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RateRadar</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="hero">
+        <h1>RateRadar</h1>
+        <p>Discover and Review Amazing Places</p>
+    </div>
+
+     
+       <div class="search-bar" style="text-align: center;">
+        <form method="GET" action="/search">
+            <input type="text" name="q" placeholder="Search for a place..." required style="width: 300px;"> 
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+
+    <div class="add-place">
+        <h2>Add a New Place</h2>
+        <form action="/add-place" method="POST">
+            <input type="text" name="name" placeholder="Place name" required>
+            <input type="text" name="location" placeholder="Location" required>
+            <button type="submit">Add</button>
+        </form>
+        </div>
+    
+    <div class="grid">
+        <% places.forEach(place => { %>
+            <div class="card">
+                <a href="/place/<%= place.id %>">
+                    
+                    <div class="card-content">
+                        <h2><%= place.name %></h2>
+                        <p><%= place.location %></p>
+                    </div>
+                </a>
+            </div>
+        <% }); %>
+    </div>
+
+    
+</body>
+</html>
